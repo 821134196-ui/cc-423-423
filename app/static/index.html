@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>暖爪宠物美容 · 预约与护理记录</title>
+<link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+
+<!-- 登录页 -->
+<div id="login" class="login-wrap hidden">
+  <form id="login-form" class="login-card">
+    <div class="brand">
+      <span class="brand-paw">🐾</span>
+      <h1>暖爪宠物美容</h1>
+      <p>预约排程 · 护理记录 · 异常留档 · 取宠核验</p>
+    </div>
+    <label>用户名<input name="username" autocomplete="username" placeholder="admin / qian / mei"></label>
+    <label>口令<input name="password" type="password" autocomplete="current-password" placeholder="演示口令见下方"></label>
+    <button class="btn btn-navy big" type="submit">登 录</button>
+    <div id="login-error" class="error-text"></div>
+    <div class="demo-hint">
+      <button type="button" data-u="admin" data-p="admin123">店长 admin/admin123<br><small>可查看异常照片</small></button>
+      <button type="button" data-u="qian" data-p="qian123">前台 qian/qian123<br><small>可查看异常照片</small></button>
+      <button type="button" data-u="mei" data-p="mei123">美容师 mei/mei123<br><small>无异常照片权限</small></button>
+    </div>
+  </form>
+</div>
+
+<!-- 主应用 -->
+<div id="app" class="hidden">
+  <header class="topbar">
+    <div class="brand-sm"><span>🐾</span> 暖爪宠物美容</div>
+    <nav class="tabs">
+      <button data-view="calendar" class="tab active">📅 预约日历</button>
+      <button data-view="pets" class="tab">🐶 宠物档案</button>
+      <button data-view="stations" class="tab">🏗️ 工位排程</button>
+      <button data-view="care" class="tab">✂️ 护理录入</button>
+      <button data-view="incidents" class="tab">⚠️ 异常照片</button>
+      <button data-view="pickup" class="tab">🏷️ 取宠核验</button>
+    </nav>
+    <div class="userbox">
+      <span id="notify-dot" class="notify-dot" title="有通知重试中">⏳</span>
+      <span id="user-label"></span>
+      <button id="logout-btn" class="btn btn-ghost">退出</button>
+    </div>
+  </header>
+
+  <main id="view"></main>
+</div>
+
+<div id="toast" class="toast hidden"></div>
+
+<script src="/app.js"></script>
+</body>
+</html>
