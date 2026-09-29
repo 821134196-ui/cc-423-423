@@ -13,3 +13,10 @@ build/
 轨迹/
 录屏/
 视频/
+
+# 运行时数据（启动时自动重建/预置）
+grooming.db
+grooming.db-wal
+grooming.db-shm
+uploads/*
+!uploads/.gitkeep

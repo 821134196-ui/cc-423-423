@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>萌爪美容台 · 预约与护理记录</title>
+  <link rel="stylesheet" href="/static/styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <span class="brand-mark">🐾</span>
+      <div>
+        <h1>萌爪美容台</h1>
+        <p>宠物美容预约与护理记录系统</p>
+      </div>
+    </div>
+    <nav class="tabs" id="tabs">
+      <button class="tab active" data-view="calendar">📅 预约日历</button>
+      <button class="tab" data-view="pets">🐶 宠物档案</button>
+      <button class="tab" data-view="stations">🧺 工位排程</button>
+      <button class="tab" data-view="care">✂️ 护理录入</button>
+      <button class="tab" data-view="photos">📷 异常照片</button>
+      <button class="tab" data-view="pickup">🔑 取宠核验</button>
+    </nav>
+    <div class="top-actions">
+      <button class="bell" id="bellBtn" title="提醒与通知">
+        🔔<span class="bell-dot" id="bellDot"></span>
+      </button>
+      <label class="staff-switch">
+        当前身份
+        <select id="staffSelect"></select>
+      </label>
+    </div>
+  </header>
+
+  <main id="main"></main>
+
+  <!-- 通用弹窗 -->
+  <div class="modal-mask" id="modalMask" hidden>
+    <div class="modal" id="modalBox">
+      <div class="modal-head">
+        <h3 id="modalTitle"></h3>
+        <button class="icon-btn" id="modalClose">✕</button>
+      </div>
+      <div class="modal-body" id="modalBody"></div>
+    </div>
+  </div>
+
+  <!-- 通知抽屉 -->
+  <aside class="drawer" id="drawer" hidden>
+    <div class="drawer-head">
+      <h3>🔔 提醒与通知</h3>
+      <button class="icon-btn" id="drawerClose">✕</button>
+    </div>
+    <div class="drawer-body" id="drawerBody"></div>
+  </aside>
+
+  <div id="toast" class="toast" hidden></div>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>
